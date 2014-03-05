@@ -31,6 +31,7 @@ public class MainFrame extends JFrame {
                 ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
                 ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         leftScrollPane.getViewport().add(leftPane);
+        leftScrollPane.setRowHeaderView(new TextLineNumber(leftPane));
 
         JTextPane rightPane = new JTextPane();
         rightDoc = rightPane.getStyledDocument();
@@ -40,6 +41,7 @@ public class MainFrame extends JFrame {
                 ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
                 ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         rightScrollPane.getViewport().add(rightPane);
+        rightScrollPane.setRowHeaderView(new TextLineNumber(rightPane));
 
         JPanel diffPanel = new JPanel(new GridLayout(1, 2));
         diffPanel.setPreferredSize(new Dimension(1000, 800));
